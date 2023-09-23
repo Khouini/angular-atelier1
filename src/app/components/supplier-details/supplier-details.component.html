@@ -1,11 +1,13 @@
-<!-- src/app/supplier-details.component.html -->
-
-<div>
-  <h2>Supplier Details</h2>
-  <ul *ngIf="!hide">
-    <li><strong>ID:</strong> {{ supplier?.id }}</li>
-    <li><strong>Code:</strong> {{ supplier?.code }}</li>
-    <li><strong>Label:</strong> {{ supplier?.label }}</li>
-  </ul>
+<div class="supplier-details-container">
+  <div class="supplier-details">
+    <!-- <h2>Supplier Details</h2> -->
+    <ul *ngIf="!hide" class="supplier-details-list">
+      <li><strong>ID:</strong> {{ supplier?.id }}</li>
+      <li><strong>Code:</strong> {{ supplier?.code }}</li>
+      <li><strong>Label:</strong> {{ supplier?.label }}</li>
+    </ul>
+  </div>
+  <div class="clear-button-container">
+    <button class="clear-button" (click)="setHidden()">Clear</button>
+  </div>
 </div>
-<button (click)="setHidden()">Clear</button>

@@ -1,0 +1,52 @@
+/* Add this CSS to your component's CSS file or a global stylesheet */
+
+.supplier-details-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.supplier-details {
+  flex-grow: 1;
+}
+
+h2 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.supplier-details-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.supplier-details-list li {
+  margin-bottom: 5px;
+}
+
+strong {
+  font-weight: bold;
+}
+
+.clear-button-container {
+  margin-left: 20px; /* Adjust margin as needed for spacing */
+}
+
+.clear-button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clear-button:hover {
+  background-color: #c82333;
+}
