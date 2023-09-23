@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { SupplierService } from 'src/app/core/supplier.service';
-import { Supplier } from 'src/app/shared/supplier.model';
+import { Supplier } from 'src/app/models/supplier.model';
 const supplierService = new SupplierService();
 @Component({
   selector: 'app-supplier-details',
@@ -9,10 +9,9 @@ const supplierService = new SupplierService();
 })
 export class SupplierDetailsComponent {
   hide: boolean = false;
-  supplier?: Supplier = supplierService.getSupplier();
+  @Input() supplier: Supplier = {};
 
   setHidden(): void {
     this.hide = true;
-    console.log("🚀 ~ file: supplier-details.component.ts:16 ~ SupplierDetailsComponent ~ setHidden ~ this.hide:", this.hide)
   }
 }
