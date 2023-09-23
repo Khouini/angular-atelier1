@@ -2,10 +2,10 @@
 
 <div>
   <h2>Supplier Details</h2>
-  <ul>
+  <ul *ngIf="!hide">
     <li><strong>ID:</strong> {{ supplier?.id }}</li>
     <li><strong>Code:</strong> {{ supplier?.code }}</li>
     <li><strong>Label:</strong> {{ supplier?.label }}</li>
   </ul>
-  <button (click)="setHidden()">Clear</button>
 </div>
+<button (click)="setHidden()">Clear</button>
