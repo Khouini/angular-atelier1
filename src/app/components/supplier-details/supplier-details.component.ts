@@ -14,4 +14,8 @@ export class SupplierDetailsComponent {
   setHidden(): void {
     this.hide = true;
   }
+
+  getCodeFontWeight(): string {
+    return this.supplier.code?.startsWith('2A') ? 'bold' : 'normal';
+  }
 }
