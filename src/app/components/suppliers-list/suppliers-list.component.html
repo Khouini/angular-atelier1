@@ -1,3 +1,6 @@
 <div *ngFor="let supplier of suppliers">
-  <app-supplier-details [supplier]="supplier" *ngIf="supplier && supplier.id && supplier.id <= 200"></app-supplier-details>
+  <app-supplier-details
+    [supplier]="supplier"
+    *ngIf="supplier && supplier.id && supplier.id <= 200"
+  ></app-supplier-details>
 </div>

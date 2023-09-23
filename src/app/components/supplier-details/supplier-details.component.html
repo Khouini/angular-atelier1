@@ -1,7 +1,8 @@
 <div
-  [style.background-color]="supplier.label === 'hp' ? 'green' : 'yellow'"
+  [style.background-color]="getBackgroundColor()"
   *ngIf="!hide"
   class="supplier-details-container"
+  (dblclick)="supplier.id !== undefined && deleteSupplier(supplier.id)"
 >
   <div class="supplier-details">
     <!-- <h2>Supplier Details</h2> -->
@@ -9,16 +10,14 @@
       <li><strong>ID:</strong> {{ supplier.id }}</li>
       <li>
         <strong>Code:</strong>
-        <span
-          [style.font-weight]="getCodeFontWeight()"
-        >
+        <span [style.font-weight]="getCodeFontWeight()">
           {{ supplier.code }}</span
         >
       </li>
       <li><strong>Label:</strong>{{ supplier.label }}</li>
     </ul>
   </div>
-  <div class="clear-button-container">
+  <!-- <div class="clear-button-container">
     <button class="clear-button" (click)="setHidden()">Hide</button>
-  </div>
+  </div> -->
 </div>

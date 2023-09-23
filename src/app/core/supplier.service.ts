@@ -20,4 +20,13 @@ export class SupplierService {
   getSuppliers(): Supplier[] {
     return suppliers;
   }
+
+  deleteSupplier(supplierId: number): void {
+    const indexToDelete = suppliers.findIndex(
+      (supplier) => supplier.id === supplierId
+    );
+    if (indexToDelete !== -1) {
+      suppliers.splice(indexToDelete, 1);
+    }
+  }
 }
