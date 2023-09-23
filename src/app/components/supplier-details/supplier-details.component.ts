@@ -8,5 +8,11 @@ const supplierService = new SupplierService();
   styleUrls: ['./supplier-details.component.css'],
 })
 export class SupplierDetailsComponent {
+  hide: boolean = false;
   supplier?: Supplier = supplierService.getSupplier();
+
+  setHidden(): void {
+    this.hide = true;
+    console.log("🚀 ~ file: supplier-details.component.ts:16 ~ SupplierDetailsComponent ~ setHidden ~ this.hide:", this.hide)
+  }
 }
