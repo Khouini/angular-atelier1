@@ -1,24 +1,28 @@
-<div
-  [style.background-color]="getBackgroundColor()"
+<div class="container mb-4">
+  <div
+    [style.background-color]="getBackgroundColor()"
+    class="container supplier-details-container"
+  >
+    <div
+      (dblclick)="supplier.id !== undefined && deleteSupplier(supplier.id)"
+      class="p-3 border supplier-details"
+    >
+      <div *ngIf="!hide">
+        <legend class="mb-4">Supplier: {{ supplier.id }}</legend>
+        <ul class="list-unstyled">
+          <li>
+            <strong>Code:</strong>
+            <span [style.font-weight]="getCodeFontWeight()">{{
+              supplier.code
+            }}</span>
+          </li>
+          <li><strong>Label:</strong> {{ supplier.label }}</li>
+        </ul>
+      </div>
 
-  class="supplier-details-container"
-  (dblclick)="supplier.id !== undefined && deleteSupplier(supplier.id)"
->
-  <fieldset *ngIf="!hide" class="supplier-details">
-    <legend>Supplier: {{ supplier.id }}</legend>
-    <!-- <h2>Supplier Details</h2> -->
-    <ul class="supplier-details-list">
-      <!-- <li><strong>ID:</strong> {{ supplier.id }}</li> -->
-      <li>
-        <strong>Code:</strong>
-        <span [style.font-weight]="getCodeFontWeight()">
-          {{ supplier.code }}</span
-        >
-      </li>
-      <li><strong>Label:</strong>{{ supplier.label }}</li>
-    </ul>
-  </fieldset>
-  <div class="clear-button-container">
-    <button class="clear-button" (click)="setHidden()">Hide</button>
+      <div class="clear-button-container mt-3">
+        <button class="btn btn-danger" (click)="setHidden()">{{ hide ? "unhide" : "hide" }}</button>
+      </div>
+    </div>
   </div>
 </div>

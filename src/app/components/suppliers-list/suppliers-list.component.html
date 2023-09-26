@@ -1,6 +1,7 @@
-<div *ngFor="let supplier of suppliers">
-  <app-supplier-details
-    [supplier]="supplier"
-    *ngIf="supplier && supplier.id && supplier.id <= 200"
-  ></app-supplier-details>
+<div class="container">
+  <ng-container *ngFor="let supplier of suppliers">
+    <div class="mb-4" *ngIf="supplier && supplier.id && supplier.id <= 200">
+      <app-supplier-details [supplier]="supplier"></app-supplier-details>
+    </div>
+  </ng-container>
 </div>
