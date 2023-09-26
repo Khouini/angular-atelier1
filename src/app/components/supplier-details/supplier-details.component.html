@@ -1,13 +1,14 @@
 <div
   [style.background-color]="getBackgroundColor()"
-  *ngIf="!hide"
+
   class="supplier-details-container"
   (dblclick)="supplier.id !== undefined && deleteSupplier(supplier.id)"
 >
-  <div class="supplier-details">
+  <fieldset *ngIf="!hide" class="supplier-details">
+    <legend>Supplier: {{ supplier.id }}</legend>
     <!-- <h2>Supplier Details</h2> -->
     <ul class="supplier-details-list">
-      <li><strong>ID:</strong> {{ supplier.id }}</li>
+      <!-- <li><strong>ID:</strong> {{ supplier.id }}</li> -->
       <li>
         <strong>Code:</strong>
         <span [style.font-weight]="getCodeFontWeight()">
@@ -16,8 +17,8 @@
       </li>
       <li><strong>Label:</strong>{{ supplier.label }}</li>
     </ul>
-  </div>
-  <!-- <div class="clear-button-container">
+  </fieldset>
+  <div class="clear-button-container">
     <button class="clear-button" (click)="setHidden()">Hide</button>
-  </div> -->
+  </div>
 </div>

@@ -12,7 +12,7 @@ export class SupplierDetailsComponent {
 
   constructor(private supplierService: SupplierService) {}
   setHidden(): void {
-    this.hide = true;
+    this.hide =!this.hide;
   }
 
   getCodeFontWeight(): string {
